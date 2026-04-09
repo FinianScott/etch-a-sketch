@@ -1,0 +1,1 @@
+Building an etch a sketch as instructed in the foundations course of project odin. Ideally using flexbox and js to make it listen and interact with your cursors as it crosses the screen. 
