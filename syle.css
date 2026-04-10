@@ -7,9 +7,13 @@
 }
 
 .gridDiv{
+    /*
     width: 38px;
-    margin: 10px;
-    border: medium solid #3882F6;
     height: 38px;
+    margin: 10px;
+    */
+    
+    
+    border: medium solid #3882F6;
     border-radius: 10%;
 }
