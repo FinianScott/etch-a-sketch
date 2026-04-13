@@ -12,7 +12,7 @@ function buildDivs(num){
             squareDiv.style.width = 75/num + 'vh';
             
             squareDiv.addEventListener("mouseenter", (event) => {
-                event.target.style.backgroundColor = 'black';
+                event.target.style.backgroundColor = '#453dbdff';
             });
             
             divRow.appendChild(squareDiv);
