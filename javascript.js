@@ -10,9 +10,12 @@ function buildDivs(num){
             squareDiv.setAttribute('class', 'gridDiv');
             squareDiv.style.height = 75/num + 'vh';
             squareDiv.style.width = 75/num + 'vh';
+            
+            squareDiv.addEventListener("mouseenter", (event) => {
+                event.target.style.backgroundColor = 'black';
+            });
+            
             divRow.appendChild(squareDiv);
-
-            //eventually add listener for hover to function
         }
         container.appendChild(divRow);
     
