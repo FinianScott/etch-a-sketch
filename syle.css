@@ -1,20 +1,25 @@
 #container{
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #7aa4e9;
 }
 
+.divRow{
+    display:flex;
+}
+
 .gridDiv{
-    /*
-    width: 38px;
-    height: 38px;
-    margin: 10px;
-    */
-    
-    
     background-color: #3882F6;
     border-radius: 10%;
+}
+
+button{
+    margin:2vh;
+    font-size: large;
+    background-color: #3882F6;
+    color: #453dbdff;
+    border-color: #453dbdff;
 }
