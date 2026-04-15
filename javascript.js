@@ -1,7 +1,7 @@
 //FUNCTION FOR BUILDING DIVS. GIVEN NUMBER. For statement up to number squared append div. 
 function buildDivs(num){
     for (let i = 0; i < num; i++){
-        //const container = document.querySelector("#container");
+        
         const divRow = document.createElement('div');
         divRow.setAttribute('class', 'divRow');
         
@@ -26,11 +26,17 @@ const container = document.querySelector("#container");
 buildDivs(16);
 const sizeButton = document.querySelector('#changeSize');
 sizeButton.addEventListener("click", ()=> {
-    const rows = document.querySelectorAll(".divRow");
-    rows.forEach((row) =>{
-            container.removeChild(row);
+const newNum = prompt("Enter number of squares per side (1 to 100)");
+    if (newNum >=1 && newNum <=100){
+        const rows = document.querySelectorAll(".divRow");
+        rows.forEach((row) =>{
+                container.removeChild(row);
         })
-    buildDivs(prompt("Enter number of squares per side (1 to 99)"))
+        buildDivs(newNum);
+    }
+    else{
+        alert("Value entered outside of range.")
+    }
     }
 );
 //Set number to sixteen, then run function. eventually add listener here to update page if new number entered. 
