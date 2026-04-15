@@ -24,6 +24,7 @@ function buildDivs(num){
 
 const container = document.querySelector("#container");
 buildDivs(16);
+
 const sizeButton = document.querySelector('#changeSize');
 sizeButton.addEventListener("click", ()=> {
 const newNum = prompt("Enter number of squares per side (1 to 100)");
@@ -39,4 +40,40 @@ const newNum = prompt("Enter number of squares per side (1 to 100)");
     }
     }
 );
-//Set number to sixteen, then run function. eventually add listener here to update page if new number entered. 
+
+const colorButton = document.querySelector('#randomColor');
+let colorOn = false;
+const opacityButton = document.querySelector('#addOpacity');
+let opacityOn = false;
+
+function buttonToggle(filter){
+    return !(filter);
+}
+
+colorButton.addEventListener("click", ()=> {
+        console.log(colorOn);
+        colorOn = buttonToggle(colorOn);
+        console.log(colorOn);
+        if (colorOn){
+            console.log('Yes')
+            colorButton.textContent = 'Random Color: On';
+        }
+        else{
+            colorButton.textContent = 'Random Color: Off';
+        }
+    }
+)
+
+opacityButton.addEventListener("click", ()=> {
+        console.log(opacityOn);
+        opacityOn = buttonToggle(opacityOn);
+        console.log(opacityOn);
+        if (opacityOn){
+            console.log('Yes')
+            opacityButton.textContent = 'Opacity: On';
+        }
+        else{
+            opacityButton.textContent = 'Opacity: Off';
+        }
+    }
+)
