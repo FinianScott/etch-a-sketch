@@ -12,7 +12,12 @@ function buildDivs(num){
             squareDiv.style.width = 75/num + 'vh';
             
             squareDiv.addEventListener("mouseenter", (event) => {
-                event.target.style.backgroundColor = '#453dbdff';
+                if (colorOn){
+                    event.target.style.backgroundColor = `rgb(${randRGB()},${randRGB()},${randRGB()})`;
+                }
+                else{
+                    event.target.style.backgroundColor = '#453dbdff';
+                }
             });
             
             divRow.appendChild(squareDiv);
@@ -50,12 +55,13 @@ function buttonToggle(filter){
     return !(filter);
 }
 
+function randRGB(){
+    return Math.floor(Math.random() * 255) + 1;
+}
+
 colorButton.addEventListener("click", ()=> {
-        console.log(colorOn);
         colorOn = buttonToggle(colorOn);
-        console.log(colorOn);
         if (colorOn){
-            console.log('Yes')
             colorButton.textContent = 'Random Color: On';
         }
         else{
