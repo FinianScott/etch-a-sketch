@@ -12,6 +12,15 @@ function buildDivs(num){
             squareDiv.style.width = 75/num + 'vh';
             
             squareDiv.addEventListener("mouseenter", (event) => {
+                if (opacityOn){
+                    const opacityVal = Number(event.target.style.opacity)
+                    if (event.target.style.opacity == ""){
+                        event.target.style.opacity = 0.1;
+                    }
+                    else{
+                        event.target.style.opacity =  opacityVal + 0.1;
+                    }
+                }
                 if (colorOn){
                     event.target.style.backgroundColor = `rgb(${randRGB()},${randRGB()},${randRGB()})`;
                 }
@@ -71,11 +80,8 @@ colorButton.addEventListener("click", ()=> {
 )
 
 opacityButton.addEventListener("click", ()=> {
-        console.log(opacityOn);
         opacityOn = buttonToggle(opacityOn);
-        console.log(opacityOn);
         if (opacityOn){
-            console.log('Yes')
             opacityButton.textContent = 'Opacity: On';
         }
         else{
